@@ -12,7 +12,27 @@
 
 <body ng-controller="StudentController" class="bg-gray-900 text-white">
     <div class="flex">
-        <div class="flex-3"></div>
+        <div class="flex-3 p-6">
+            <table class=" min-w-full divide-y divide-gray-200 shadow-lg rounded-lg overflow-hidden">
+                <thead class="bg-indigo-600 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Nom</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Prénom</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Date de naissance</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Classe</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200 text-gray-900">
+                    <tr class="hover:bg-blue-50" ng-repeat = "eleve in listeEleve">
+                        <td class="px-6 py-4 whitespace-nowrap">{{eleve.nom}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{eleve.prenom}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{eleve.dateNaissance}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{eleve.classe}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
 
         <div class="flex-1 flex flex-col p-6 rounded-lg shadow-lg m-6 gap-5 bg-white">
             <h1 class="text-gray-900 text-4xl">Ajouter un etudiant</h1>
@@ -45,8 +65,8 @@
             </div>
 
             <div>
-                <button ng-click="ajouterEtudiant()"
-                    class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4">
+                <button ng-click="ajouterEleve()"
+                    class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4">
                     Ajouter
                 </button>
             </div>
